@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Entry - {{ entry.title }} {% endblock %}
+
+{% block content %}
+<div class="card text-center">
+    <div class="card-header">
+      
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ entry.title }}</h5>
+      <p class="card-text">{{ entry.routine }}</p>
+    </div>
+    <div class="card-footer text-muted">
+      x days ago <!--can implement pub_date here-->
+    </div>
+  </div>
+
+<a href="{% url 'delete' entry.id %}" class="btn btn-danger btn-small">Delete Post</a>
+<a href="{% url 'home' %}">Home</a>
+{% endblock %}

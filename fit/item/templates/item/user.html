@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+
+{% block title %} New Entry {% endblock %}
+
+{% block content %} 
+    <h2>New Entry</h2>
+    <form method="post">
+        <table>
+            {{ form }}
+        </table>
+        {% csrf_token %}
+        <!--basically prevents a re-entry-->
+        <button type="submit">Enter</button>
+    </form>
+{% endblock %}

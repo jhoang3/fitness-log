@@ -1,18 +1,12 @@
 {% extends 'base.html' %}
 
-
-
 {% block title %}My fitness website!{% endblock %}
 
 {% block content %}
 
-hi the current time is {{ current_time }}
-    <hr>
-        There are currently {{ num_entries }} entries 
-    <hr>
 {% for entry in entries %} 
     <div class="card">
-        <h5 class="card-header">{{entry.title}}</h5>
+        <h5 class="card-header"><a href="{% url 'detail' entry.id %}">{{entry.title}}</a></h5>
             <div class="card-body">
         <p class="card-text">{{entry.routine}}</p>
             </div>
