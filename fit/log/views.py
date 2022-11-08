@@ -13,10 +13,9 @@ from django.contrib import messages
 # right now, one page displaying
 @login_required
 def home(request):
-    return render(request, "log/home.html",
-                    {
-                    "entries": Entry.objects.order_by('-pk'),
-                    })
+    entries = Entry.objects.order_by('-pk')
+    context = {'entries': entries}
+    return render(request, "log/home.html", context)
 
 def signup(request):
     # if the request data is post, fill it with post data, otherwise blank form

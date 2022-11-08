@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
     # could separate into a different model
 # add pub_date for time sorting later on
 class Entry(models.Model):
-    # for user-specific access to posts
-    # person = models.ForeignKey(User, on_delete=models.CASCADE, related_name="entry", null=True)
+        # for user-specific access to posts
+    # profile = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length = 100)
     routine = models.CharField(max_length = 400)
     # pub_date = models.DateTimeField('date published')

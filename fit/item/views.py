@@ -11,7 +11,7 @@ def user(request):
         form = EntryForm(request.POST)
         if form.is_valid():
             form.save()
-            # request.person.entry.add(form)
+            # request.profile.entry.add(form)
             messages.success(request, f'Post created!')
             return redirect("/")
     else:
