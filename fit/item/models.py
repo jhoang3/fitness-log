@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import admin
+import datetime
 
 # Create your models here.
 # title - depends on user, could be what muscle group hit that day or the session count
@@ -11,7 +13,8 @@ class Entry(models.Model):
     # profile = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length = 100)
     routine = models.CharField(max_length = 400)
-    # pub_date = models.DateTimeField('date published')
+    date = models.DateField(datetime.date.today(),
+                                default='null')
         # this threw an error, will look into
 
     def __str__(self):
