@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}My fitness website!{% endblock %}
+
+{% block content %}
+
+{% if entries %}
+{% for entry in entries %} 
+    <div class="card">
+        <h5 class="card-header"><a href="{% url 'detail' entry.id %}">{{entry.title}}</a></h5>
+            <div class="card-body">
+        <p class="card-text">{{entry.routine}}</p>
+            </div>
+    </div> 
+{% endfor %}
+{% else %}
+    <p>No entries have been made.</p>
+{% endif %}
+
+{% endblock %}

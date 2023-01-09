@@ -1,0 +1,8 @@
+li a {
+    color: #550000;
+}
+
+#body {
+    background: white url("images/405.jpg") no-repeat;
+    background-position: 100% -55%;
+}

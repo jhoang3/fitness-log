@@ -1,0 +1,28 @@
+{% load static %}
+<!--add some personalization !-->
+<nav class="navbar navbar-expand-lg" style="background-color: #cc7933;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <!--image link https://www.seekpng.com/ima/u2w7r5o0t4t4e6y3/-->
+      <img src="{% static 'log/cow_man.png' %}" alt="Logo" width="80" height="70" class="d-inline-block align-text-center">
+      LightWeight</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{% url 'user' %}">New Entry</a>
+        {% if user.is_authenticated %}
+          <a class="btn btn-outline-danger my-2 my-sm-0" href="{% url 'logout' %}"><strong>logout</strong></a>
+          <span class="nav-item nav-link">{{ user.username }}</span>
+        {% else %}
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'signup' %}">signup</a>
+        <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">login</a>
+        {% endif %}
+
+
+      </div>
+    </div>
+  </div>
+</nav>
+<!--can add icons to links later-->
