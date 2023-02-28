@@ -6,7 +6,7 @@ For those new to launching a development website (since I don't have the money t
 1. First, take the code files and load them into a remote file.
 2. Next, read the fies into a code editor. I recommend Visual Studio Code since it's a mainstream and simple editor, though it's arguably slow.
 3. Once open, run "python manage.py runserver" in the terminal.
-4. The code should look similar to this:
+4. The output should look similar to this:
         
         Performing system checks...
 
